@@ -21,6 +21,11 @@ void capture_digits(uint8_t com, char *str, uint8_t echo)
     }
 }
 
+void eval_guess(char *guess,char *secrete, uint8_t *bulls, uint8_t *cows)
+{
+    // TO-DO: Compare guess and secrete and update bulls and cows accordingly
+}
+
 int main( void )
 {
     char secrete[5] = {0};
@@ -59,7 +64,7 @@ int main( void )
             // Capture guess and evaluate against secrete
             UART_gotoxy(0, 5, 5 + try);
             capture_digits(0, guess, 0);
-            evalGuess(guess, secrete, &bulls, &cows);
+            eval_guess(guess, secrete, &bulls, &cows);
             // Print hints
             UART_putchar(0, '\t');
             itoa(bulls, cad, 10);
